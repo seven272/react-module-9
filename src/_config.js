@@ -11,5 +11,5 @@ export const site = {
 
 // main
 export const nameSite = {
- name: 'React Template 2023'
+ name: 'React Todo 2023'
 }

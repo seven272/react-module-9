@@ -20,7 +20,7 @@ Container.propTypes = {
 
 Container.defaultProps = {
   className: '',
-  children: null
+  // children: null
 }
 
 export default Container;
