@@ -1,8 +1,10 @@
 import React from 'react';
 import tags from 'seeders/tags.json'
+import cn from 'classnames'
 
-const Tags = ({items, isFilter, onItemClick, ...attrs}) => {
-
+const Tags = ({items, isFilter, onItemClick, className, ...attrs}) => {
+ // получаю классы через пропы, обрабатываю их с помощью билиоткеи classnames
+const classes = cn('ui-button group', {'filter-tags': isFilter})
  const newArrTags = tags.map((tag)=><span className='ui-tag' key={tag.id} onClick={() => onItemClick({title:tag.title, id:tag.id}) }>{tag.title}</span>)
  let listTags = []
 // если параметр items передан в компонент то выводим тэги из него, иначе отрисовываем полный список
@@ -13,12 +15,12 @@ const Tags = ({items, isFilter, onItemClick, ...attrs}) => {
   <div className='view-sidebar__content'>
    {
     isFilter ? (
-     <div className='ui-button group isFilter'>
+     <div className={classes}>
       <p className='text-xs mr-3'>Отфильровать задачи по тегу:</p>
       {listTags}
      </div>
     ) : (
-     <div className='ui-button group'>
+     <div className={classes}>
       {listTags}
      </div>
     )

@@ -3,6 +3,7 @@ import {Container} from 'layouts';
 import {Form, List} from 'components/todo';
 import todos from 'seeders/todos.json'
 import Tags from 'components/todo/Tags.jsx'
+// import cn from 'classnames'
 
 
 
@@ -57,7 +58,7 @@ const HomePage = () => {
       <div className='view-wrapper'>
         {/* sidebar */}
         <div className='view-sidebar'>
-          <Tags isFilter onItemClick={handleItemClick}></Tags>
+          <Tags isFilter onItemClick={handleItemClick} ></Tags>
         </div>
         {/* content */}
         <div className='view-content'>
